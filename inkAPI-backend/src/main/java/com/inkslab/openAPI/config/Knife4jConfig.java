@@ -1,4 +1,4 @@
-package com.inkslab.springbootinit.config;
+package com.inkslab.openAPI.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -31,7 +31,7 @@ public class Knife4jConfig {
                         .build())
                 .select()
                 // 指定 Controller 扫描包路径
-                .apis(RequestHandlerSelectors.basePackage("com.inkslab.springbootinit.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.inkslab.openAPI.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }

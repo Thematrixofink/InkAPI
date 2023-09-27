@@ -1,7 +1,7 @@
-package com.inkslab.springbootinit.model.dto.postfavour;
+package com.inkslab.openAPI.model.dto.postfavour;
 
-import com.inkslab.springbootinit.common.PageRequest;
-import com.inkslab.springbootinit.model.dto.post.PostQueryRequest;
+import com.inkslab.openAPI.common.PageRequest;
+import com.inkslab.openAPI.model.dto.post.PostQueryRequest;
 import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

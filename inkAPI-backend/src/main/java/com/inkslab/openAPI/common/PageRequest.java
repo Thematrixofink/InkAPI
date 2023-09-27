@@ -1,6 +1,6 @@
-package com.inkslab.springbootinit.common;
+package com.inkslab.openAPI.common;
 
-import com.inkslab.springbootinit.constant.CommonConstant;
+import com.inkslab.openAPI.constant.CommonConstant;
 import lombok.Data;
 
 /**

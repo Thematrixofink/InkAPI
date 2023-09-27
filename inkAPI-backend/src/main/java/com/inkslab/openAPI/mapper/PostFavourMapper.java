@@ -1,12 +1,12 @@
-package com.inkslab.springbootinit.mapper;
+package com.inkslab.openAPI.mapper;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Constants;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.inkslab.springbootinit.model.entity.Post;
-import com.inkslab.springbootinit.model.entity.PostFavour;
+import com.inkslab.openAPI.model.entity.Post;
+import com.inkslab.openAPI.model.entity.PostFavour;
 import org.apache.ibatis.annotations.Param;
 
 /**

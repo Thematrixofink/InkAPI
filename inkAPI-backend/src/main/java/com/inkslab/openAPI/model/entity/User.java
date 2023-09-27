@@ -1,4 +1,4 @@
-package com.inkslab.springbootinit.model.entity;
+package com.inkslab.openAPI.model.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
@@ -8,7 +8,6 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.util.Date;
 
-import io.swagger.models.auth.In;
 import lombok.Data;
 
 /**
@@ -63,9 +62,11 @@ public class User implements Serializable {
      */
     private Date createTime;
 
-//    private String accessKey;
-//
-//    private String secretKey;
+
+    private String accessKey;
+
+
+    private String secretKey;
     /**
      * 更新时间
      */

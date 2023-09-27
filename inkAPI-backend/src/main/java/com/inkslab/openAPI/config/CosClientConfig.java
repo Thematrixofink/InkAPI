@@ -1,4 +1,4 @@
-package com.inkslab.springbootinit.config;
+package com.inkslab.openAPI.config;
 
 import com.qcloud.cos.COSClient;
 import com.qcloud.cos.ClientConfig;

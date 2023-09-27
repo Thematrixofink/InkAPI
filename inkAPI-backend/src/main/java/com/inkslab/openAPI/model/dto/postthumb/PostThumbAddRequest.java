@@ -1,4 +1,4 @@
-package com.inkslab.springbootinit.model.dto.postthumb;
+package com.inkslab.openAPI.model.dto.postthumb;
 
 import java.io.Serializable;
 import lombok.Data;

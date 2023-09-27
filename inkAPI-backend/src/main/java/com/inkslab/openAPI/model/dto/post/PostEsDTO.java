@@ -1,8 +1,8 @@
-package com.inkslab.springbootinit.model.dto.post;
+package com.inkslab.openAPI.model.dto.post;
 
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
-import com.inkslab.springbootinit.model.entity.Post;
+import com.inkslab.openAPI.model.entity.Post;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;

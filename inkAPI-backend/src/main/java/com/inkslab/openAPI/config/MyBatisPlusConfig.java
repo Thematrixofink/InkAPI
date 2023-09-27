@@ -1,4 +1,4 @@
-package com.inkslab.springbootinit.config;
+package com.inkslab.openAPI.config;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 
  */
 @Configuration
-@MapperScan("com.inkslab.springbootinit.mapper")
+@MapperScan("com.inkslab.openAPI.mapper")
 public class MyBatisPlusConfig {
 
     /**

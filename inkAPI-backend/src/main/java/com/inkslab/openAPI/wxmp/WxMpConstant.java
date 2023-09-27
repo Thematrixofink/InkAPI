@@ -1,4 +1,4 @@
-package com.inkslab.springbootinit.wxmp;
+package com.inkslab.openAPI.wxmp;
 
 /**
  * 微信公众号相关常量

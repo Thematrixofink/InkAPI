@@ -1,4 +1,4 @@
-package com.inkslab.springbootinit.model.vo;
+package com.inkslab.openAPI.model.vo;
 
 import java.io.Serializable;
 import java.util.Date;

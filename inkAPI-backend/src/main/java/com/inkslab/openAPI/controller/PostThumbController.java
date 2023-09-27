@@ -1,13 +1,13 @@
-package com.inkslab.springbootinit.controller;
+package com.inkslab.openAPI.controller;
 
-import com.inkslab.springbootinit.common.BaseResponse;
-import com.inkslab.springbootinit.common.ErrorCode;
-import com.inkslab.springbootinit.common.ResultUtils;
-import com.inkslab.springbootinit.exception.BusinessException;
-import com.inkslab.springbootinit.model.dto.postthumb.PostThumbAddRequest;
-import com.inkslab.springbootinit.model.entity.User;
-import com.inkslab.springbootinit.service.PostThumbService;
-import com.inkslab.springbootinit.service.UserService;
+import com.inkslab.openAPI.common.BaseResponse;
+import com.inkslab.openAPI.common.ErrorCode;
+import com.inkslab.openAPI.common.ResultUtils;
+import com.inkslab.openAPI.exception.BusinessException;
+import com.inkslab.openAPI.model.dto.postthumb.PostThumbAddRequest;
+import com.inkslab.openAPI.model.entity.User;
+import com.inkslab.openAPI.service.PostThumbService;
+import com.inkslab.openAPI.service.UserService;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;

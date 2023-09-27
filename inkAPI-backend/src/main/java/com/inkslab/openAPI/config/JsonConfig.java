@@ -1,4 +1,4 @@
-package com.inkslab.springbootinit.config;
+package com.inkslab.openAPI.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;

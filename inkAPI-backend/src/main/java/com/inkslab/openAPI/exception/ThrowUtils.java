@@ -1,6 +1,6 @@
-package com.inkslab.springbootinit.exception;
+package com.inkslab.openAPI.exception;
 
-import com.inkslab.springbootinit.common.ErrorCode;
+import com.inkslab.openAPI.common.ErrorCode;
 
 /**
  * 抛异常工具类

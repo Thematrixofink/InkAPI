@@ -1,27 +1,34 @@
-package com.inkslab.springbootinit.controller;
+package com.inkslab.openAPI.controller;
 
+import cn.hutool.http.HttpRequest;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.inkslab.springbootinit.annotation.AuthCheck;
-import com.inkslab.springbootinit.common.BaseResponse;
-import com.inkslab.springbootinit.common.DeleteRequest;
-import com.inkslab.springbootinit.common.ErrorCode;
-import com.inkslab.springbootinit.common.ResultUtils;
-import com.inkslab.springbootinit.constant.UserConstant;
-import com.inkslab.springbootinit.exception.BusinessException;
-import com.inkslab.springbootinit.exception.ThrowUtils;
-import com.inkslab.springbootinit.model.dto.InterfaceInfo.InterfaceInfoAddRequest;
-import com.inkslab.springbootinit.model.dto.InterfaceInfo.InterfaceInfoQueryRequest;
-import com.inkslab.springbootinit.model.dto.InterfaceInfo.InterfaceInfoUpdateRequest;
-import com.inkslab.springbootinit.model.entity.InterfaceInfo;
-import com.inkslab.springbootinit.model.entity.User;
-import com.inkslab.springbootinit.service.InterfaceInfoService;
-import com.inkslab.springbootinit.service.UserService;
+import com.inkslab.inkapiclientsdk.client.inkClient;
+import com.inkslab.openAPI.annotation.AuthCheck;
+import com.inkslab.openAPI.common.BaseResponse;
+import com.inkslab.openAPI.common.DeleteRequest;
+import com.inkslab.openAPI.common.ErrorCode;
+import com.inkslab.openAPI.common.ResultUtils;
+import com.inkslab.openAPI.constant.UserConstant;
+import com.inkslab.openAPI.exception.BusinessException;
+import com.inkslab.openAPI.exception.ThrowUtils;
+import com.inkslab.openAPI.model.dto.InterfaceInfo.IdRequest;
+import com.inkslab.openAPI.model.dto.InterfaceInfo.InterfaceInfoAddRequest;
+import com.inkslab.openAPI.model.dto.InterfaceInfo.InterfaceInfoQueryRequest;
+import com.inkslab.openAPI.model.dto.InterfaceInfo.InterfaceInfoUpdateRequest;
+import com.inkslab.openAPI.model.entity.InterfaceInfo;
+import com.inkslab.openAPI.model.entity.User;
+import com.inkslab.openAPI.model.enums.InterfaceInfoStatusEnum;
+import com.inkslab.openAPI.service.InterfaceInfoService;
+import com.inkslab.openAPI.service.UserService;
+import io.swagger.models.auth.In;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 
 @RestController
 @RequestMapping("/interfaceInfo")
@@ -34,6 +41,9 @@ public class InterfaceInfoController {
 
     @Resource
     private UserService userService;
+
+    @Resource
+    private inkClient inkClient;
 
     /**
      * 创建
@@ -110,7 +120,7 @@ public class InterfaceInfoController {
      * @param id
      * @return
      */
-    @GetMapping("/get/vo")
+    @GetMapping("/get")
     public BaseResponse<InterfaceInfo> getInterfaceInfoById(long id) {
         if (id <= 0) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
@@ -125,17 +135,73 @@ public class InterfaceInfoController {
     /**
      * 分页获取列表（封装类）
      *
-     * @param interfaceInfoQueryRequest
      * @return
      */
     @GetMapping("/list/page")
-    public BaseResponse<Page<InterfaceInfo>> listenInterfaceInfoByPage(@RequestBody InterfaceInfoQueryRequest interfaceInfoQueryRequest) {
-        long current = interfaceInfoQueryRequest.getCurrent();
-        long size = interfaceInfoQueryRequest.getPageSize();
+    public BaseResponse<Page<InterfaceInfo>> listenInterfaceInfoByPage(@RequestParam("current") long current,@RequestParam("pageSize") long size) {
         // 限制爬虫
         ThrowUtils.throwIf(size > 20, ErrorCode.PARAMS_ERROR);
-        Page<InterfaceInfo> interfaceInfoPage = interfaceInfoService.page(new Page<>(current, size),
-                interfaceInfoService.getQueryWrapper(interfaceInfoQueryRequest));
+        Page<InterfaceInfo> interfaceInfoPage = interfaceInfoService.page(new Page<>(current, size));
         return ResultUtils.success(interfaceInfoPage);
+    }
+
+    @PostMapping("/online")
+    @AuthCheck(mustRole = "admin")
+    public BaseResponse<Boolean> interfaceOnline(@RequestBody IdRequest idRequest, HttpServletRequest request){
+        if(idRequest == null || idRequest.getId() <= 0 ){
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        long id = idRequest.getId();
+        InterfaceInfo interfaceInfo = interfaceInfoService.getById(id);
+        if(interfaceInfo == null){
+            throw new BusinessException(ErrorCode.NOT_FOUND_ERROR);
+        }
+        //如果接口的状态已经是上线了，那么就不要执行上面的操作了
+        Integer status = interfaceInfo.getStatus();
+        if(status == 1){
+            throw new BusinessException(ErrorCode.OPERATION_ERROR);
+        }
+        //检测接口是否能够调用
+        //todo 根据测试地址调用
+        com.inkslab.inkapiclientsdk.model.User user = new com.inkslab.inkapiclientsdk.model.User();
+        user.setName("test");
+        String nameByPostBody = inkClient.getNameByPostBody(user);
+        if(nameByPostBody == null){
+            throw new BusinessException(ErrorCode.SYSTEM_ERROR,"接口调用失败");
+        }
+        InterfaceInfo newInterface = new InterfaceInfo();
+        newInterface.setId(id);
+        newInterface.setStatus(InterfaceInfoStatusEnum.ONLINE.getValue());
+        boolean update = interfaceInfoService.updateById(newInterface);
+        if(!update){
+            throw new BusinessException(ErrorCode.SYSTEM_ERROR);
+        }
+        return ResultUtils.success(update);
+    }
+
+    @PostMapping("/offline")
+    @AuthCheck(mustRole = "admin")
+    public BaseResponse<Boolean> interfaceOffine(@RequestBody IdRequest idRequest, HttpServletRequest request){
+        if(idRequest == null || idRequest.getId() <= 0 ){
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        long id = idRequest.getId();
+        InterfaceInfo interfaceInfo = interfaceInfoService.getById(id);
+        if(interfaceInfo == null){
+            throw new BusinessException(ErrorCode.NOT_FOUND_ERROR);
+        }
+        //如果接口的状态已经是了，那么就不要执行上面的操作了
+        Integer status = interfaceInfo.getStatus();
+        if(status == 0){
+            throw new BusinessException(ErrorCode.OPERATION_ERROR);
+        }
+        InterfaceInfo newInterface = new InterfaceInfo();
+        newInterface.setId(id);
+        newInterface.setStatus(InterfaceInfoStatusEnum.OFFLINE.getValue());
+        boolean update = interfaceInfoService.updateById(newInterface);
+        if(!update){
+            throw new BusinessException(ErrorCode.SYSTEM_ERROR);
+        }
+        return ResultUtils.success(update);
     }
 }

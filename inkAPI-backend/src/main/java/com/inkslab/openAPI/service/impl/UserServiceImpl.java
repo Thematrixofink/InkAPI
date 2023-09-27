@@ -1,21 +1,21 @@
-package com.inkslab.springbootinit.service.impl;
+package com.inkslab.openAPI.service.impl;
 
-import static com.inkslab.springbootinit.constant.UserConstant.USER_LOGIN_STATE;
+import static com.inkslab.openAPI.constant.UserConstant.USER_LOGIN_STATE;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.inkslab.springbootinit.common.ErrorCode;
-import com.inkslab.springbootinit.constant.CommonConstant;
-import com.inkslab.springbootinit.exception.BusinessException;
-import com.inkslab.springbootinit.mapper.UserMapper;
-import com.inkslab.springbootinit.model.dto.user.UserQueryRequest;
-import com.inkslab.springbootinit.model.entity.User;
-import com.inkslab.springbootinit.model.enums.UserRoleEnum;
-import com.inkslab.springbootinit.model.vo.LoginUserVO;
-import com.inkslab.springbootinit.model.vo.UserVO;
-import com.inkslab.springbootinit.service.UserService;
-import com.inkslab.springbootinit.utils.SqlUtils;
+import com.inkslab.openAPI.common.ErrorCode;
+import com.inkslab.openAPI.constant.CommonConstant;
+import com.inkslab.openAPI.exception.BusinessException;
+import com.inkslab.openAPI.mapper.UserMapper;
+import com.inkslab.openAPI.model.dto.user.UserQueryRequest;
+import com.inkslab.openAPI.model.entity.User;
+import com.inkslab.openAPI.model.enums.UserRoleEnum;
+import com.inkslab.openAPI.model.vo.LoginUserVO;
+import com.inkslab.openAPI.model.vo.UserVO;
+import com.inkslab.openAPI.service.UserService;
+import com.inkslab.openAPI.utils.SqlUtils;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;

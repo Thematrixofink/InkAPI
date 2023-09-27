@@ -1,6 +1,6 @@
-package com.inkslab.springbootinit.mapper;
+package com.inkslab.openAPI.mapper;
 
-import com.inkslab.springbootinit.model.entity.Post;
+import com.inkslab.openAPI.model.entity.Post;
 import java.util.Date;
 import java.util.List;
 import javax.annotation.Resource;

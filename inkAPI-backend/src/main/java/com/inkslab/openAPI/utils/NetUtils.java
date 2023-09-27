@@ -1,4 +1,4 @@
-package com.inkslab.springbootinit.utils;
+package com.inkslab.openAPI.utils;
 
 import java.net.InetAddress;
 import javax.servlet.http.HttpServletRequest;

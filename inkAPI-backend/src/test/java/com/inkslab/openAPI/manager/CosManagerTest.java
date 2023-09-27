@@ -1,4 +1,4 @@
-package com.inkslab.springbootinit.manager;
+package com.inkslab.openAPI.manager;
 
 import javax.annotation.Resource;
 import org.junit.jupiter.api.Test;

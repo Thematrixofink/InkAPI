@@ -1,11 +1,11 @@
-package com.inkslab.springbootinit.aop;
+package com.inkslab.openAPI.aop;
 
-import com.inkslab.springbootinit.annotation.AuthCheck;
-import com.inkslab.springbootinit.common.ErrorCode;
-import com.inkslab.springbootinit.exception.BusinessException;
-import com.inkslab.springbootinit.model.entity.User;
-import com.inkslab.springbootinit.model.enums.UserRoleEnum;
-import com.inkslab.springbootinit.service.UserService;
+import com.inkslab.openAPI.annotation.AuthCheck;
+import com.inkslab.openAPI.common.ErrorCode;
+import com.inkslab.openAPI.exception.BusinessException;
+import com.inkslab.openAPI.model.entity.User;
+import com.inkslab.openAPI.model.enums.UserRoleEnum;
+import com.inkslab.openAPI.service.UserService;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.lang3.StringUtils;

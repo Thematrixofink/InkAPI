@@ -1,8 +1,8 @@
-package com.inkslab.springbootinit.service;
+package com.inkslab.openAPI.service;
 
-import com.inkslab.springbootinit.model.entity.PostThumb;
+import com.inkslab.openAPI.model.entity.PostThumb;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.inkslab.springbootinit.model.entity.User;
+import com.inkslab.openAPI.model.entity.User;
 
 /**
  * 帖子点赞服务

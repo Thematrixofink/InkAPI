@@ -1,6 +1,6 @@
-package com.inkslab.springbootinit;
+package com.inkslab.openAPI;
 
-import com.inkslab.springbootinit.config.WxOpenConfig;
+import com.inkslab.openAPI.config.WxOpenConfig;
 import javax.annotation.Resource;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

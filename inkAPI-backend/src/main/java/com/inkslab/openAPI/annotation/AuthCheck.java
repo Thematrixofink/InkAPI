@@ -1,4 +1,4 @@
-package com.inkslab.springbootinit.annotation;
+package com.inkslab.openAPI.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

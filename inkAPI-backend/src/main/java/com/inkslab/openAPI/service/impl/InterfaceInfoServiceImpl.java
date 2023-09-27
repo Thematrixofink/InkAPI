@@ -1,16 +1,16 @@
-package com.inkslab.springbootinit.service.impl;
+package com.inkslab.openAPI.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.inkslab.springbootinit.common.ErrorCode;
-import com.inkslab.springbootinit.constant.CommonConstant;
-import com.inkslab.springbootinit.exception.BusinessException;
-import com.inkslab.springbootinit.exception.ThrowUtils;
-import com.inkslab.springbootinit.model.dto.InterfaceInfo.InterfaceInfoQueryRequest;
-import com.inkslab.springbootinit.model.entity.*;
-import com.inkslab.springbootinit.service.InterfaceInfoService;
-import com.inkslab.springbootinit.mapper.InterfaceInfoMapper;
-import com.inkslab.springbootinit.utils.SqlUtils;
+import com.inkslab.openAPI.common.ErrorCode;
+import com.inkslab.openAPI.constant.CommonConstant;
+import com.inkslab.openAPI.exception.BusinessException;
+import com.inkslab.openAPI.exception.ThrowUtils;
+import com.inkslab.openAPI.model.dto.InterfaceInfo.InterfaceInfoQueryRequest;
+import com.inkslab.openAPI.model.entity.*;
+import com.inkslab.openAPI.service.InterfaceInfoService;
+import com.inkslab.openAPI.mapper.InterfaceInfoMapper;
+import com.inkslab.openAPI.utils.SqlUtils;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;

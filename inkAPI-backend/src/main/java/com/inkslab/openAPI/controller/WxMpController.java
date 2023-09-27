@@ -1,6 +1,6 @@
-package com.inkslab.springbootinit.controller;
+package com.inkslab.openAPI.controller;
 
-import com.inkslab.springbootinit.wxmp.WxMpConstant;
+import com.inkslab.openAPI.wxmp.WxMpConstant;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;

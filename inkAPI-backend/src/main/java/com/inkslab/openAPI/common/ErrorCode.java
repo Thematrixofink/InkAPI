@@ -1,4 +1,4 @@
-package com.inkslab.springbootinit.common;
+package com.inkslab.openAPI.common;
 
 /**
  * 自定义错误码

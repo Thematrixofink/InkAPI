@@ -1,15 +1,15 @@
-package com.inkslab.springbootinit.service.impl;
+package com.inkslab.openAPI.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.inkslab.springbootinit.common.ErrorCode;
-import com.inkslab.springbootinit.exception.BusinessException;
-import com.inkslab.springbootinit.mapper.PostThumbMapper;
-import com.inkslab.springbootinit.model.entity.Post;
-import com.inkslab.springbootinit.model.entity.PostThumb;
-import com.inkslab.springbootinit.model.entity.User;
-import com.inkslab.springbootinit.service.PostService;
-import com.inkslab.springbootinit.service.PostThumbService;
+import com.inkslab.openAPI.common.ErrorCode;
+import com.inkslab.openAPI.exception.BusinessException;
+import com.inkslab.openAPI.mapper.PostThumbMapper;
+import com.inkslab.openAPI.model.entity.Post;
+import com.inkslab.openAPI.model.entity.PostThumb;
+import com.inkslab.openAPI.model.entity.User;
+import com.inkslab.openAPI.service.PostService;
+import com.inkslab.openAPI.service.PostThumbService;
 import javax.annotation.Resource;
 import org.springframework.aop.framework.AopContext;
 import org.springframework.stereotype.Service;

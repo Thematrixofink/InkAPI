@@ -1,9 +1,9 @@
-package com.inkslab.springbootinit.esdao;
+package com.inkslab.openAPI.esdao;
 
-import com.inkslab.springbootinit.model.dto.post.PostEsDTO;
-import com.inkslab.springbootinit.model.dto.post.PostQueryRequest;
-import com.inkslab.springbootinit.model.entity.Post;
-import com.inkslab.springbootinit.service.PostService;
+import com.inkslab.openAPI.model.dto.post.PostEsDTO;
+import com.inkslab.openAPI.model.dto.post.PostQueryRequest;
+import com.inkslab.openAPI.model.entity.Post;
+import com.inkslab.openAPI.service.PostService;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;

@@ -1,8 +1,8 @@
-package com.inkslab.springbootinit.exception;
+package com.inkslab.openAPI.exception;
 
-import com.inkslab.springbootinit.common.BaseResponse;
-import com.inkslab.springbootinit.common.ErrorCode;
-import com.inkslab.springbootinit.common.ResultUtils;
+import com.inkslab.openAPI.common.BaseResponse;
+import com.inkslab.openAPI.common.ErrorCode;
+import com.inkslab.openAPI.common.ResultUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;

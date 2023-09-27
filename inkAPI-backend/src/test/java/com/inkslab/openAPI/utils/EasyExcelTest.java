@@ -1,4 +1,4 @@
-package com.inkslab.springbootinit.utils;
+package com.inkslab.openAPI.utils;
 
 import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.support.ExcelTypeEnum;

@@ -1,4 +1,4 @@
-package com.inkslab.springbootinit.constant;
+package com.inkslab.openAPI.constant;
 
 /**
  * 用户常量

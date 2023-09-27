@@ -1,11 +1,11 @@
-package com.inkslab.springbootinit.service;
+package com.inkslab.openAPI.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.inkslab.springbootinit.model.dto.post.PostQueryRequest;
-import com.inkslab.springbootinit.model.entity.Post;
-import com.inkslab.springbootinit.model.vo.PostVO;
+import com.inkslab.openAPI.model.dto.post.PostQueryRequest;
+import com.inkslab.openAPI.model.entity.Post;
+import com.inkslab.openAPI.model.vo.PostVO;
 import javax.servlet.http.HttpServletRequest;
 
 /**

@@ -1,9 +1,9 @@
-package com.inkslab.springbootinit.manager;
+package com.inkslab.openAPI.manager;
 
 import com.qcloud.cos.COSClient;
 import com.qcloud.cos.model.PutObjectRequest;
 import com.qcloud.cos.model.PutObjectResult;
-import com.inkslab.springbootinit.config.CosClientConfig;
+import com.inkslab.openAPI.config.CosClientConfig;
 import java.io.File;
 import javax.annotation.Resource;
 import org.springframework.stereotype.Component;

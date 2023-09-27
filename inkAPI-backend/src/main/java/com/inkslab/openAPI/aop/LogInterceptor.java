@@ -1,4 +1,4 @@
-package com.inkslab.springbootinit.aop;
+package com.inkslab.openAPI.aop;
 
 import java.util.UUID;
 import javax.servlet.http.HttpServletRequest;
@@ -26,7 +26,7 @@ public class LogInterceptor {
     /**
      * 执行拦截
      */
-    @Around("execution(* com.inkslab.springbootinit.controller.*.*(..))")
+    @Around("execution(* com.inkslab.openAPI.controller.*.*(..))")
     public Object doInterceptor(ProceedingJoinPoint point) throws Throwable {
         // 计时
         StopWatch stopWatch = new StopWatch();

@@ -1,4 +1,4 @@
-package com.inkslab.springbootinit.model.enums;
+package com.inkslab.openAPI.model.enums;
 
 import java.util.Arrays;
 import java.util.List;

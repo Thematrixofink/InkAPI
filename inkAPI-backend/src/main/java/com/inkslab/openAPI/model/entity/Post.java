@@ -1,4 +1,4 @@
-package com.inkslab.springbootinit.model.entity;
+package com.inkslab.openAPI.model.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;

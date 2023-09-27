@@ -1,9 +1,9 @@
-package com.inkslab.springbootinit.job.cycle;
+package com.inkslab.openAPI.job.cycle;
 
-import com.inkslab.springbootinit.esdao.PostEsDao;
-import com.inkslab.springbootinit.mapper.PostMapper;
-import com.inkslab.springbootinit.model.dto.post.PostEsDTO;
-import com.inkslab.springbootinit.model.entity.Post;
+import com.inkslab.openAPI.esdao.PostEsDao;
+import com.inkslab.openAPI.mapper.PostMapper;
+import com.inkslab.openAPI.model.dto.post.PostEsDTO;
+import com.inkslab.openAPI.model.entity.Post;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;

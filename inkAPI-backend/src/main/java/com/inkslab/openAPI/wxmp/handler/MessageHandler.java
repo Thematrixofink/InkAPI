@@ -1,4 +1,4 @@
-package com.inkslab.springbootinit.wxmp.handler;
+package com.inkslab.openAPI.wxmp.handler;
 
 import java.util.Map;
 import me.chanjar.weixin.common.error.WxErrorException;

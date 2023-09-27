@@ -1,6 +1,6 @@
-package com.inkslab.springbootinit.model.dto.user;
+package com.inkslab.openAPI.model.dto.user;
 
-import com.inkslab.springbootinit.common.PageRequest;
+import com.inkslab.openAPI.common.PageRequest;
 import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

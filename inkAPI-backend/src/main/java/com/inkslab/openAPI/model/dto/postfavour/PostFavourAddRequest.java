@@ -1,4 +1,4 @@
-package com.inkslab.springbootinit.model.dto.postfavour;
+package com.inkslab.openAPI.model.dto.postfavour;
 
 import java.io.Serializable;
 import lombok.Data;

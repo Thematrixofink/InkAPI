@@ -1,4 +1,4 @@
-package com.inkslab.springbootinit.utils;
+package com.inkslab.openAPI.utils;
 
 import org.apache.commons.lang3.StringUtils;
 

@@ -1,11 +1,11 @@
-package com.inkslab.springbootinit.service;
+package com.inkslab.openAPI.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.inkslab.springbootinit.model.dto.user.UserQueryRequest;
-import com.inkslab.springbootinit.model.entity.User;
-import com.inkslab.springbootinit.model.vo.LoginUserVO;
-import com.inkslab.springbootinit.model.vo.UserVO;
+import com.inkslab.openAPI.model.dto.user.UserQueryRequest;
+import com.inkslab.openAPI.model.entity.User;
+import com.inkslab.openAPI.model.vo.LoginUserVO;
+import com.inkslab.openAPI.model.vo.UserVO;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import me.chanjar.weixin.common.bean.WxOAuth2UserInfo;

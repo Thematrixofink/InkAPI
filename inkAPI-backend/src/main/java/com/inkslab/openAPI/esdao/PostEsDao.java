@@ -1,6 +1,6 @@
-package com.inkslab.springbootinit.esdao;
+package com.inkslab.openAPI.esdao;
 
-import com.inkslab.springbootinit.model.dto.post.PostEsDTO;
+import com.inkslab.openAPI.model.dto.post.PostEsDTO;
 import java.util.List;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 

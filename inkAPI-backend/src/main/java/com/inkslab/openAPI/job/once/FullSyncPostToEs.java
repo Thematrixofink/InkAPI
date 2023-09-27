@@ -1,9 +1,9 @@
-package com.inkslab.springbootinit.job.once;
+package com.inkslab.openAPI.job.once;
 
-import com.inkslab.springbootinit.esdao.PostEsDao;
-import com.inkslab.springbootinit.model.dto.post.PostEsDTO;
-import com.inkslab.springbootinit.model.entity.Post;
-import com.inkslab.springbootinit.service.PostService;
+import com.inkslab.openAPI.esdao.PostEsDao;
+import com.inkslab.openAPI.model.dto.post.PostEsDTO;
+import com.inkslab.openAPI.model.entity.Post;
+import com.inkslab.openAPI.service.PostService;
 import java.util.List;
 import java.util.stream.Collectors;
 import javax.annotation.Resource;

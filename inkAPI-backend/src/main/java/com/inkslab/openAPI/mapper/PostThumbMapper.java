@@ -1,6 +1,6 @@
-package com.inkslab.springbootinit.mapper;
+package com.inkslab.openAPI.mapper;
 
-import com.inkslab.springbootinit.model.entity.PostThumb;
+import com.inkslab.openAPI.model.entity.PostThumb;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

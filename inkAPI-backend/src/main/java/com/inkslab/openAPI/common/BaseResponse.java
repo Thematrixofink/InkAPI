@@ -1,4 +1,4 @@
-package com.inkslab.springbootinit.common;
+package com.inkslab.openAPI.common;
 
 import java.io.Serializable;
 import lombok.Data;

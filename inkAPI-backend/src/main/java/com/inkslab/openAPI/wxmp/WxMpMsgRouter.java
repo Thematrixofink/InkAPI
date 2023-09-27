@@ -1,8 +1,8 @@
-package com.inkslab.springbootinit.wxmp;
+package com.inkslab.openAPI.wxmp;
 
-import com.inkslab.springbootinit.wxmp.handler.EventHandler;
-import com.inkslab.springbootinit.wxmp.handler.MessageHandler;
-import com.inkslab.springbootinit.wxmp.handler.SubscribeHandler;
+import com.inkslab.openAPI.wxmp.handler.EventHandler;
+import com.inkslab.openAPI.wxmp.handler.MessageHandler;
+import com.inkslab.openAPI.wxmp.handler.SubscribeHandler;
 import javax.annotation.Resource;
 import me.chanjar.weixin.common.api.WxConsts.EventType;
 import me.chanjar.weixin.common.api.WxConsts.XmlMsgType;

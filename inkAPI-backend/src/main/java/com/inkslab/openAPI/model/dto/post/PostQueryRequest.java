@@ -1,6 +1,6 @@
-package com.inkslab.springbootinit.model.dto.post;
+package com.inkslab.openAPI.model.dto.post;
 
-import com.inkslab.springbootinit.common.PageRequest;
+import com.inkslab.openAPI.common.PageRequest;
 import java.io.Serializable;
 import java.util.List;
 import lombok.Data;

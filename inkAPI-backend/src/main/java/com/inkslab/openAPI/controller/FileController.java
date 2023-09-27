@@ -1,16 +1,16 @@
-package com.inkslab.springbootinit.controller;
+package com.inkslab.openAPI.controller;
 
 import cn.hutool.core.io.FileUtil;
-import com.inkslab.springbootinit.common.BaseResponse;
-import com.inkslab.springbootinit.common.ErrorCode;
-import com.inkslab.springbootinit.common.ResultUtils;
-import com.inkslab.springbootinit.constant.FileConstant;
-import com.inkslab.springbootinit.exception.BusinessException;
-import com.inkslab.springbootinit.manager.CosManager;
-import com.inkslab.springbootinit.model.dto.file.UploadFileRequest;
-import com.inkslab.springbootinit.model.entity.User;
-import com.inkslab.springbootinit.model.enums.FileUploadBizEnum;
-import com.inkslab.springbootinit.service.UserService;
+import com.inkslab.openAPI.common.BaseResponse;
+import com.inkslab.openAPI.common.ErrorCode;
+import com.inkslab.openAPI.common.ResultUtils;
+import com.inkslab.openAPI.constant.FileConstant;
+import com.inkslab.openAPI.exception.BusinessException;
+import com.inkslab.openAPI.manager.CosManager;
+import com.inkslab.openAPI.model.dto.file.UploadFileRequest;
+import com.inkslab.openAPI.model.entity.User;
+import com.inkslab.openAPI.model.enums.FileUploadBizEnum;
+import com.inkslab.openAPI.service.UserService;
 import java.io.File;
 import java.util.Arrays;
 import javax.annotation.Resource;

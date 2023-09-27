@@ -1,8 +1,8 @@
-package com.inkslab.springbootinit.service;
+package com.inkslab.openAPI.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.inkslab.springbootinit.model.dto.post.PostQueryRequest;
-import com.inkslab.springbootinit.model.entity.Post;
+import com.inkslab.openAPI.model.dto.post.PostQueryRequest;
+import com.inkslab.openAPI.model.entity.Post;
 import javax.annotation.Resource;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

@@ -13,7 +13,7 @@
     <groupId>com.inkslab</groupId>
     <artifactId>inkAPI-backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>springboot-init</name>
+    <name>inkAPI-backend</name>
     <properties>
         <java.version>1.8</java.version>
     </properties>
@@ -121,6 +121,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.inkslab</groupId>
+            <artifactId>inkAPI-client-sdk</artifactId>
+            <version>0.0.1</version>
         </dependency>
     </dependencies>
 

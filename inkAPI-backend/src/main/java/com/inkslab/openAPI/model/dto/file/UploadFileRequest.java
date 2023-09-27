@@ -1,4 +1,4 @@
-package com.inkslab.springbootinit.model.dto.file;
+package com.inkslab.openAPI.model.dto.file;
 
 import java.io.Serializable;
 import lombok.Data;

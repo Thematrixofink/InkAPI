@@ -1,8 +1,8 @@
-package com.inkslab.springbootinit.service;
+package com.inkslab.openAPI.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.inkslab.springbootinit.model.dto.InterfaceInfo.InterfaceInfoQueryRequest;
-import com.inkslab.springbootinit.model.entity.InterfaceInfo;
+import com.inkslab.openAPI.model.dto.InterfaceInfo.InterfaceInfoQueryRequest;
+import com.inkslab.openAPI.model.entity.InterfaceInfo;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

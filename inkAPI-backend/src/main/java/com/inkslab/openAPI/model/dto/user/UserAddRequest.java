@@ -1,4 +1,4 @@
-package com.inkslab.springbootinit.model.dto.user;
+package com.inkslab.openAPI.model.dto.user;
 
 import java.io.Serializable;
 import lombok.Data;
@@ -25,6 +25,10 @@ public class UserAddRequest implements Serializable {
      * 用户头像
      */
     private String userAvatar;
+
+    private String accessKey;
+
+    private String secretKey;
 
     /**
      * 用户角色: user, admin

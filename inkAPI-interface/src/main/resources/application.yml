@@ -1,0 +1,8 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /api
+inkapi:
+  client:
+    access-key: accessKey
+    secret-key: secretKey

@@ -1,4 +1,4 @@
-package com.inkslab.springbootinit.model.dto.post;
+package com.inkslab.openAPI.model.dto.post;
 
 import java.io.Serializable;
 import java.util.List;

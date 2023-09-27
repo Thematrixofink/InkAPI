@@ -1,4 +1,4 @@
-package com.inkslab.springbootinit.utils;
+package com.inkslab.openAPI.utils;
 
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.BeansException;

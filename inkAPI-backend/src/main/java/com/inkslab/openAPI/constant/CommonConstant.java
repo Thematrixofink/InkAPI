@@ -1,4 +1,4 @@
-package com.inkslab.springbootinit.constant;
+package com.inkslab.openAPI.constant;
 
 /**
  * 通用常量
@@ -16,5 +16,5 @@ public interface CommonConstant {
      * 降序
      */
     String SORT_ORDER_DESC = " descend";
-    
+
 }

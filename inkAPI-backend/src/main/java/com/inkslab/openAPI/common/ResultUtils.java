@@ -1,4 +1,4 @@
-package com.inkslab.springbootinit.common;
+package com.inkslab.openAPI.common;
 
 /**
  * 返回工具类
