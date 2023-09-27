@@ -7,6 +7,8 @@ import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.util.Date;
+
+import io.swagger.models.auth.In;
 import lombok.Data;
 
 /**
@@ -34,15 +36,6 @@ public class User implements Serializable {
      */
     private String userPassword;
 
-    /**
-     * 开放平台id
-     */
-    private String unionId;
-
-    /**
-     * 公众号openId
-     */
-    private String mpOpenId;
 
     /**
      * 用户昵称
@@ -50,14 +43,15 @@ public class User implements Serializable {
     private String userName;
 
     /**
+     * 用戶性別
+     */
+    private Integer gender;
+
+    /**
      * 用户头像
      */
     private String userAvatar;
 
-    /**
-     * 用户简介
-     */
-    private String userProfile;
 
     /**
      * 用户角色：user/admin/ban
@@ -69,6 +63,9 @@ public class User implements Serializable {
      */
     private Date createTime;
 
+//    private String accessKey;
+//
+//    private String secretKey;
     /**
      * 更新时间
      */
