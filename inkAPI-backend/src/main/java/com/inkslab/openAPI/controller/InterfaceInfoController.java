@@ -1,7 +1,10 @@
 package com.inkslab.openAPI.controller;
 
 import cn.hutool.http.HttpRequest;
+import cn.hutool.json.JSON;
+import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import com.inkslab.inkapiclientsdk.client.inkClient;
 import com.inkslab.openAPI.annotation.AuthCheck;
 import com.inkslab.openAPI.common.BaseResponse;
@@ -11,10 +14,7 @@ import com.inkslab.openAPI.common.ResultUtils;
 import com.inkslab.openAPI.constant.UserConstant;
 import com.inkslab.openAPI.exception.BusinessException;
 import com.inkslab.openAPI.exception.ThrowUtils;
-import com.inkslab.openAPI.model.dto.InterfaceInfo.IdRequest;
-import com.inkslab.openAPI.model.dto.InterfaceInfo.InterfaceInfoAddRequest;
-import com.inkslab.openAPI.model.dto.InterfaceInfo.InterfaceInfoQueryRequest;
-import com.inkslab.openAPI.model.dto.InterfaceInfo.InterfaceInfoUpdateRequest;
+import com.inkslab.openAPI.model.dto.InterfaceInfo.*;
 import com.inkslab.openAPI.model.entity.InterfaceInfo;
 import com.inkslab.openAPI.model.entity.User;
 import com.inkslab.openAPI.model.enums.InterfaceInfoStatusEnum;
@@ -23,12 +23,14 @@ import com.inkslab.openAPI.service.UserService;
 import io.swagger.models.auth.In;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
+import org.eclipse.parsson.JsonUtil;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
+import java.util.Objects;
 
 @RestController
 @RequestMapping("/interfaceInfo")
@@ -203,5 +205,30 @@ public class InterfaceInfoController {
             throw new BusinessException(ErrorCode.SYSTEM_ERROR);
         }
         return ResultUtils.success(update);
+    }
+
+    @PostMapping("/invoke")
+    @AuthCheck(mustRole = "admin")
+    public BaseResponse<Object> invokeInterface(@RequestBody InterfaceInvokeRequest interfaceInvokeRequest,HttpServletRequest request){
+        if(interfaceInvokeRequest == null || interfaceInvokeRequest.getId() <= 0){
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        long id = interfaceInvokeRequest.getId();
+        InterfaceInfo interfaceInfo = interfaceInfoService.getById(id);
+        if(interfaceInfo == null){
+            throw new BusinessException(ErrorCode.NOT_FOUND_ERROR);
+        }
+        if(Objects.equals(interfaceInfo.getStatus(), InterfaceInfoStatusEnum.OFFLINE.getValue())){
+            throw new BusinessException(ErrorCode.NOT_FOUND_ERROR);
+        }
+
+        User user = userService.getLoginUser(request);
+        String accessKey = user.getAccessKey();
+        String secretKey = user.getSecretKey();
+        inkClient tempClient = new inkClient(accessKey,secretKey);
+        //todo 根据不同的地址改为不同的方法
+        String nameByPostBody = tempClient.getNameByPostBody(JSONUtil.toBean(interfaceInvokeRequest.getUserRequestParams(), com.inkslab.inkapiclientsdk.model.User.class));
+        return ResultUtils.success(nameByPostBody);
+
     }
 }
